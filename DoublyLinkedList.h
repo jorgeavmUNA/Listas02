@@ -11,7 +11,24 @@ public:
     DoublyLinkedList() : head(nullptr), tail(nullptr) {}
 
     ~DoublyLinkedList() {
-        // Tarea: Implementar el destructor para borrar todos los nodos. 
+        std::cout << "Ejecutando destructor ..." << std::endl;
+
+        Node<T>* current = head; // Empezamos en la cabeza
+
+        while (current != nullptr) {
+            // 1. Guardamos el puntero al siguiente nodo usando el getter
+            Node<T>* nextNode = current->getNext();
+
+            // 2. Borramos el nodo actual
+            delete current;
+
+            // 3. Avanzamos al siguiente nodo guardado
+            current = nextNode;
+        }
+
+        // Aseguramos que los punteros de la lista queden nulos
+        head = nullptr;
+        tail = nullptr;
     }
 
     // -- - Métodos a Implementar-- -
@@ -34,7 +51,7 @@ public:
     // 5. Eliminar un nodo por valor 
     // (Este es el método más complejo, ¡presta atención a los casos borde!) 
     bool deleteNode(T data) {
-
+        return false; // cambiar el retorno según corresponda.
     }
     // 6. Buscar un nodo 
     Node<T>* search(T data) {

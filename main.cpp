@@ -24,5 +24,5 @@ int main()
     std::cout << "Lista 2: ";
     list2.printForward(); // Salida esperada: Hola -> Mundo
     return 0;
-}
+} // Salida esperada: Ejecutando el destructor.
 
